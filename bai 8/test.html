@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script
+      src="https://example.com/fontawesome/v6.2.0/js/all.js"
+      data-search-pseudo-elements
+    ></script>
+    <link rel="stylesheet" href="bai8.css" />
+    <title>bai8</title>
+  </head>
+  <body>
+    <button type="submit" onclick="login()" id="login1">
+      <span id="start-login">Đăng nhập hệ thống</span>
+    </button>
+    <div id="container">
+      <div id="bg">
+        <div class="bg-in">
+          <p>Member Login</p>
+          <form method="get" onsubmit="Loading()">
+            <div style="max-width: 270px; margin: auto">
+              <div class="input-icons">
+                <i class="fa fa-user icon"></i>
+                <input
+                  class="input-field"
+                  type="text"
+                  placeholder="Username"
+                  id="username"
+                />
+                <div id="notfill-user">
+                  <div>* Điền vào ô trống</div>
+                </div>
+                <i class="fa-solid fa-lock icon"></i>
+                <input
+                  class="input-field"
+                  type="text"
+                  placeholder="Password"
+                  id="password"
+                />
+                <div id="notfill-pass">
+                  <div>* Điền vào ô trống</div>
+                </div>
+                <div id="incorrect-pass">
+                  <div>*Sai mật khẩu</div>
+                </div>
+              </div>
+
+              <button type="submit" onclick="Loading()" id="btn-login">
+                <p id="login-content">Login</p>
+              </button>
+            </div>
+          </form>
+          <div id="down">
+            <a href="" id="forgot-btn">Forgot password</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function login() {
+        // console.log(4);
+        document.getElementById("container").style.display = "block";
+        document.getElementById("login1").style.display = "none";
+      }
+      console.log(typeof document.getElementById("username").value);
+      function Loading() {
+        document.getElementById("login-content").innerHTML = "Loading...";
+        setTimeout(function () {
+          checknotfill();
+          var u = document.getElementById("username").value;
+          var p = document.getElementById("password").value;
+          document.getElementById("login-content").innerHTML = "Login";
+          // document.getElementById("login1").innerHTML = "Login";
+        }, 1000);
+      }
+      function checknotfill() {
+        var u = document.getElementById("username").value;
+        var p = document.getElementById("password").value;
+        if (u == "" && p == "") {
+          console.log(2);
+          document.getElementById("notfill-user").style.display = "block";
+          document.getElementById("notfill-pass").style.display = "block";
+          document.getElementById("incorrect-pass").style.display = "none";
+          document.getElementById("down").style.bottom = "-74px";
+        } else if (u != "" && p == "") {
+          document.getElementById("notfill-pass").style.display = "block";
+          document.getElementById("notfill-user").style.display = "none";
+          document.getElementById("incorrect-pass").style.display = "none";
+          document.getElementById("down").style.bottom = "-90px";
+        } else if (u == "" && p != "") {
+          document.getElementById("notfill-user").style.display = "block";
+          document.getElementById("notfill-pass").style.display = "none";
+          document.getElementById("incorrect-pass").style.display = "none";
+          document.getElementById("down").style.bottom = "-90px";
+        } else if ((u != "") & (p != "")) {
+          document.getElementById("incorrect-pass").style.display = "block";
+          document.getElementById("notfill-pass").style.display = "none";
+          document.getElementById("notfill-user").style.display = "none";
+        }
+        if (u == "admin" && p == "admin") {
+          document.getElementById("container").style.display = "none";
+
+          document.getElementById("login1").style.display = "block";
+          document.getElementById("login1").style.innerHTML =
+            "Đăng nhập thành công";
+        }
+        // console.log(1);
+      }
+    </script>
+  </body>
+</html>

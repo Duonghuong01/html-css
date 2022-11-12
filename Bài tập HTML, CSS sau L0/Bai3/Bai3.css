@@ -1,0 +1,87 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    position: relative;
+    width: 50%;
+    background-color: #f2f2f2;
+    height: 432px;
+    margin: 0 auto;
+   
+
+    
+}
+.dong1-1{
+    display: flex;
+    justify-content: center;
+    align-items: "center";
+}
+.dong1{
+    position: absolute;
+    margin: 0 auto;
+    color: #58c6cf;
+    border: 2px solid #58c6cf;
+    border-radius: 50%;
+    width: 47px;
+    height: 44px;
+    /* display: flex; */
+    /* justify-content: center; */
+    text-align: center;
+   
+    margin-left: 46%;
+    top: 49px;
+}
+.icon{
+    width: auto;
+    height: auto;
+    margin-top: 31%;
+   
+}
+.dong2{
+    text-align: center;
+    font-weight: bold;
+    font-size: 31px;
+    padding-top: 140px;
+}
+.dong3{
+    text-align: center;
+    font-weight: inherit;
+    font-size: 16px;
+    padding-top: 28px;
+    opacity: 0.6;
+}
+.dong4-1{
+    border-radius: 3px;
+    height: 25px;
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 10px;
+    width: 252px;
+    border: none;
+    padding: 7px;
+}
+.dong4{
+    display: flex;
+    justify-content: center;
+    margin: 18px;
+    margin-top: 27px;
+}
+.dong5{
+    width: 144px;
+    margin: 0 auto;
+    height: 8px;
+}
+.dong5-1{
+    width: 144px;
+    height: 41px;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    background-color: #70cbce;
+    border: none;
+    border-radius: 3px;
+}
+button:hover{
+    background-color: #7bdfe2;
+}

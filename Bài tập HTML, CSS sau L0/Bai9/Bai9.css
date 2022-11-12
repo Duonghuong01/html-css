@@ -1,0 +1,36 @@
+.cover{
+    width: 75%;
+    margin: 0 auto;
+}
+.container{
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+.item{
+    max-width: 441px;
+    margin: 10px;
+}
+.dong1{
+    display: flex;
+    justify-content: center;
+}
+.img-logo{
+    max-width: 200px;
+    padding-bottom: 9px;
+    height: 68px;
+}
+.dong2{
+    text-align: center;
+}
+i{
+    font-size: 14px;
+    opacity: 0.6;
+}
+.text{
+    text-align: center;
+    color: #ffce1b;
+    font-size: 35px;
+    font-weight: bold;
+    padding: 52px;
+}

@@ -1,0 +1,47 @@
+*{
+    font-family: system-ui;}
+.cover{
+    width: 50%;
+    margin: 0 auto;
+    background-color: #f2f3f5;
+    padding: 22px;
+
+}
+.container{
+
+}
+.item{
+    display: flex;
+    margin: 20px 20px;
+}
+.left{
+    background: rgb(217, 151, 222);
+    width: 17%;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 5vw;
+    border-radius: 7px;
+    margin-right: 34px;
+    padding: 10px;
+    font-weight: 100;
+}
+.right{
+    width: 100%;
+   
+    line-height: 35px; 
+}
+.dong1{
+    padding-bottom: 4px;
+}
+.dong2{
+    line-height: 27px;
+    opacity: 0.5;
+}
+hr{
+    border-top: 1px dashed red;
+    opacity: 0.5;
+}

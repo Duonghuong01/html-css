@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script
+      src="https://example.com/fontawesome/v6.2.0/js/all.js"
+      data-search-pseudo-elements
+    ></script>
+    <link rel="stylesheet" href="bai8.css" />
+    <title>bai8</title>
+  </head>
+  <body>
+    <button type="submit" onclick="login()" id="login1">
+      <span id="start-login">Đăng nhập hệ thống</span>
+    </button>
+    <div id="container">
+      <div id="bg">
+        <div class="bg-in">
+          <button class="icon-delete" onclick="deleted()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <p>Member Login</p>
+
+          <form method="get">
+            <div style="max-width: 270px; margin: auto">
+              <div class="input-icons">
+                <i class="fa fa-user icon"></i>
+                <input
+                  class="input-field"
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  id="username"
+                />
+                <div id="notfill-user">
+                  <div>* Bắt buộc nhập</div>
+                </div>
+                <i class="fa-solid fa-lock icon"></i>
+                <input
+                  class="input-field"
+                  type="text"
+                  name="password"
+                  placeholder="Password"
+                  id="password"
+                />
+                <div id="notfill-pass">
+                  <div>* Bắt buộc nhập</div>
+                </div>
+                <div id="incorrect-pass">
+                  <div>*Tài khoản hoặc mật khẩu không đúng</div>
+                </div>
+              </div>
+
+              <button type="submit" onclick="Loading()" id="btn-login">
+                <p id="login-content">Login</p>
+              </button>
+              <div id="changepass-success">
+                <div>*Bạn đã dổi mật khẩu thành công</div>
+              </div>
+            </div>
+          </form>
+          <div id="down" onclick="forgotpass()">
+            <a href="" id="forgot-btn">Forgot password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container1">
+      <div id="bg1">
+        <div class="bg-in1">
+          <button class="icon-delete" onclick="deleted()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <p>Change password</p>
+          <form method="get">
+            <div style="max-width: 270px; margin: auto">
+              <div class="input-icons">
+                <i class="fa fa-user icon"></i>
+                <input
+                  class="input-field"
+                  type="text"
+                  name="oldpass"
+                  placeholder="OldPassWord"
+                  id="oldpass"
+                />
+                <div id="notfill-oldpass">
+                  <div>* Bắt buộc nhập</div>
+                </div>
+                <i class="fa-solid fa-lock icon"></i>
+                <input
+                  class="input-field"
+                  type="text"
+                  name="new"
+                  placeholder="NewPassWord"
+                  id="newpass"
+                />
+                <div id="notfill-newpass">
+                  <div>* Bắt buộc nhập</div>
+                </div>
+
+                <div id="failold-pass">
+                  <div>* Password không đúng</div>
+                </div>
+              </div>
+
+              <button type="submit" onclick="Checknewpass()" id="btn-save">
+                <p id="login-content1">Save</p>
+              </button>
+            </div>
+          </form>
+
+          <div id="down1" onclick="Back()">
+            <a href="" id="forgot-btn1">Back</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let passcu = "admin";
+      function login() {
+        // console.log(4);
+        document.getElementById("container").style.display = "block";
+        document.getElementById("login1").style.display = "none";
+        document.getElementById("incorrect-pass").style.display = "none";
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+        refresh();
+      }
+      console.log(typeof document.getElementById("username").value);
+      function Loading() {
+        document.getElementById("login-content").innerHTML = "Loading...";
+        event.preventDefault();
+        setTimeout(function () {
+          checknotfill();
+
+          document.getElementById("login-content").innerHTML = "Login";
+          // document.getElementById("login1").innerHTML = "Login";
+        }, 1000);
+      }
+      function checknotfill() {
+        var u = document.getElementById("username").value;
+        var p = document.getElementById("password").value;
+
+        if (u == "" && p == "") {
+          console.log(2);
+          document.getElementById("notfill-user").style.display = "block";
+          document.getElementById("notfill-pass").style.display = "block";
+          document.getElementById("incorrect-pass").style.display = "none";
+          document.getElementById("changepass-success").style.display = "none";
+        } else if (u != "" && p == "") {
+          document.getElementById("notfill-pass").style.display = "block";
+          document.getElementById("notfill-user").style.display = "none";
+          document.getElementById("incorrect-pass").style.display = "none";
+          document.getElementById("changepass-success").style.display = "none";
+        } else if (u == "" && p != "") {
+          document.getElementById("notfill-user").style.display = "block";
+          document.getElementById("notfill-pass").style.display = "none";
+          document.getElementById("incorrect-pass").style.display = "none";
+          document.getElementById("changepass-success").style.display = "none";
+        } else if (u != "" && p != "") {
+          document.getElementById("incorrect-pass").style.display = "block";
+          document.getElementById("notfill-pass").style.display = "none";
+          document.getElementById("notfill-user").style.display = "none";
+          document.getElementById("changepass-success").style.display = "none";
+        }
+        if (u == "admin" && p == passcu) {
+          document.getElementById("container").style.display = "none";
+
+          document.getElementById("login1").style.display = "block";
+          document.getElementById("login1").innerText = "Đăng nhập thành công";
+          console.log("passcu =" + passcu);
+          document.getElementById("changepass-success").style.display = "none";
+        }
+        // console.log(1);
+      }
+      function forgotpass() {
+        event.preventDefault();
+        var o = document.getElementById("oldpass").value;
+        var n = document.getElementById("newpass").value;
+        document.getElementById("container1").style.display = "block";
+        document.getElementById("container").style.display = "none";
+        document.getElementById("notfill-oldpass").style.display = "none";
+        document.getElementById("notfill-newpass").style.display = "none";
+        refresh();
+
+        // document.getElementsByName("oldpass")[0].placeholder = "";
+      }
+
+      function Checknewpass() {
+        event.preventDefault();
+        var o = document.getElementById("oldpass").value;
+        var n = document.getElementById("newpass").value;
+
+        if (o == "" && n == "") {
+          document.getElementById("notfill-oldpass").style.display = "block";
+          document.getElementById("notfill-newpass").style.display = "block";
+          document.getElementById("failold-pass").style.display = "none";
+        }
+        if (o == "" && n != "") {
+          document.getElementById("notfill-oldpass").style.display = "block";
+          document.getElementById("notfill-newpass").style.display = "none";
+          document.getElementById("failold-pass").style.display = "none";
+        }
+        if (o != "" && n == "") {
+          document.getElementById("notfill-oldpass").style.display = "none";
+          document.getElementById("notfill-newpass").style.display = "block";
+          document.getElementById("failold-pass").style.display = "none";
+        }
+        if (o != passcu && o != "" && n != "") {
+          document.getElementById("notfill-oldpass").style.display = "none";
+          document.getElementById("notfill-newpass").style.display = "none";
+
+          document.getElementById("failold-pass").style.display = "block";
+        }
+
+        if (o == passcu && n != "") {
+          console.log(n);
+          document.getElementById("container1").style.display = "none";
+          document.getElementById("container").style.display = "block";
+          document.getElementById("changepass-success").style.display = "block";
+          document.getElementById("notfill-user").style.display = "none";
+          document.getElementById("notfill-pass").style.display = "none";
+          refresh();
+          document.getElementById("failold-pass").style.display = "none";
+          document.getElementById("incorrect-pass").style.display = "none";
+          passcu = n;
+          console.log("rememner=" + passcu);
+          // console.log(n);
+        }
+      }
+      console.log("re=" + remember);
+      function Back() {
+        event.preventDefault();
+
+        document.getElementById("container").style.display = "block";
+        document.getElementById("container1").style.display = "none";
+        document.getElementById("notfill-user").style.display = "none";
+        document.getElementById("notfill-pass").style.display = "none";
+
+        document.getElementById("incorrect-pass").style.display = "none";
+        document.getElementById("changepass-success").style.display = "none";
+      }
+      function refresh() {
+        document.getElementById("oldpass").value = "";
+        document.getElementById("newpass").value = "";
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+      }
+      function deleted() {
+        document.getElementById("container").style.display = "none";
+        document.getElementById("container1").style.display = "none";
+
+        document.getElementById("login1").style.display = "block";
+        refresh();
+      }
+    </script>
+  </body>
+</html>

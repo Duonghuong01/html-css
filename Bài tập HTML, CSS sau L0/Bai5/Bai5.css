@@ -1,0 +1,45 @@
+*{
+    font-family: "Gill Sans", sans-serif;}
+.cover{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width: 43%;
+    margin: 0 auto;
+   
+}
+.dong1{
+    font-weight: bold;
+    font-size: 30px;
+}.dong2{
+    padding: 20px 0px;
+    opacity: 0.25;
+    line-height: 22px;
+    font-weight: 600;
+}
+.dong3{
+    display: flex;
+    max-width: 782px;
+    flex-wrap: wrap;
+}
+li{
+    list-style-type: none;
+    font-size: 14px;
+    opacity: 0.4;
+    line-height: 35px;
+}
+ul{
+    padding-inline-start: 0px;
+    
+}
+.icon{
+    color: #c2d82e;
+    font-weight: bold;
+    padding-right: 6px;
+}
+.dong3-1{
+    display: flex;
+    width: 214px;
+    flex-wrap: wrap;
+}

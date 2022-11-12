@@ -1,0 +1,119 @@
+.cover{
+    width: 78%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width: 75%;
+}
+.right{
+    width: 100%;
+}
+.dong1{
+    font-weight: bold;
+    font-size: 22px;
+    
+}
+.dong2{
+    
+    display: flex;
+    width: 846px;
+}
+.dong3{
+    padding-left: 20px;
+    opacity: 0.5;
+    font-size: 13px;
+}
+.dong4{
+    padding: 20px;
+    opacity: 0.5;
+    font-size: 13px;
+}
+.input-1-1{
+    padding: 8px;
+    opacity: 0.5;
+    font-size: 13px;
+    display: flex;
+    width: 90%;
+    opacity: 0.4;
+}
+
+.input-1-2{
+    padding: 8px;
+    opacity: 0.5;
+    font-size: 13px;
+    display: flex;
+    margin: 20px 0px;
+    width: 100%;
+    opacity: 0.4;
+    width: 90%;
+}
+.dong2-1{
+    width: 411px;
+    margin-right: 12px;
+    margin-top: 20px;
+}
+.dong2-2{
+    width: 402px;
+   
+}
+.message{
+    width: 90.5%;
+    height: 80px;
+}
+.btn-send{
+        border: none;
+    padding: 10px 17px;
+    color: white;
+    font-size: 12px;
+    background-color: #7dcefd;
+    /* margin: 20px 0px; */
+    border-radius: 3px;
+    
+}
+.input-1{
+    width: 100%;
+}.textmesage{
+    width: 100%;
+}
+textarea{
+    width: 90%;
+}
+.dong4{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+.dong4-1{
+    float: right;
+}
+.lock{
+    display: none;
+}
+
+@media screen and (max-width:1500px) {
+.dong2{
+    width: 100%;
+    display: block;
+}
+.dong2-1{
+    width: 100%;
+}
+.input1-1{
+    width: 100%;
+    margin-top: 10px;
+}
+.dong4{
+    display: none;
+}
+.lock{
+    display: block;
+}
+.btn-send{
+    width: 93%;
+    margin: 20px 0px
+
+   
+}
+}

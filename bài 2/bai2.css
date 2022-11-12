@@ -1,0 +1,123 @@
+li:nth-child(2n+1){
+    background-color: red;
+}
+li:nth-child(2n){
+    background-color: blue;
+}
+ul{
+    margin: 10px;
+}
+.row-sub-li{
+    width: 100px;
+    height:100px;
+    display: grid;
+    float: left;
+    margin: 10px;
+}
+.row-sub-span{
+    width: 100px;
+    height:100px;
+    display: grid;
+    float: left;
+    margin: 10px;
+}
+.container{
+    display:grid;
+}
+span:nth-child(2n+1){
+    background-color: red;
+}
+span:nth-child(2n){
+    background-color: blue;
+}
+@media only screen and (min-width:992px){
+    li:nth-child(2n+1){
+        width: 20px;
+        background-color: yellow;
+    }
+    li:nth-child(2n){
+        width:-30px;
+        background-color: purple;
+    }
+    span:nth-child(2n+1){
+        width: 20px;
+        background-color: yellow;
+    }
+    span:nth-child(2n){
+        width:-30px;
+        background-color: purple;
+    }
+}
+@media only screen and (min-width:320px){
+    li:nth-child(2n+1){
+        width: 20px;
+        background-color: red;
+    }
+    li:nth-child(2n){
+        width:-30px;
+        background-color: aqua;
+    }
+    span:nth-child(2n+1){
+        width: 20px;
+        background-color: red;
+    }
+    span:nth-child(2n){
+        width:-30px;
+        background-color: aqua;
+    }
+}
+@media only screen and (min-width:425px){
+    li:nth-child(2n+1){
+        width: 20px;
+        background-color: yellow;
+    }
+    li:nth-child(2n){
+        width:-30px;
+        background-color: red;
+    }
+    span:nth-child(2n+1){
+        width: 20px;
+        background-color: yellow;
+    }
+    span:nth-child(2n){
+        width:-30px;
+        background-color: red;
+    }
+}
+@media only screen and (min-width:768px){
+    li:nth-child(2n+1){
+        width: 20px;
+        background-color: brown;
+    }
+    li:nth-child(2n){
+        width:-30px;
+        background-color: yellow;
+    }
+    span:nth-child(2n+1){
+        width: 20px;
+        background-color: brown;
+    }
+    span:nth-child(2n){
+        width:-30px;
+        background-color: yellow;
+    }
+}
+
+@media only screen and (min-width:1200px){
+    li:nth-child(2n+1){
+        width: 50px;
+        background-color: purple;
+    }
+    li:nth-child(2n){
+        width:-100px;
+        background-color: pink;
+    }
+    span:nth-child(2n+1){
+        width: 50px;
+        background-color: purple;
+    }
+    span:nth-child(2n){
+        width:-100px;
+        background-color: pink;
+    }
+}
